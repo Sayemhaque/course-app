@@ -1,9 +1,8 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { config } from "./app.config";
 import * as SecureStore from "expo-secure-store";
 import Login from "./app/screens/login";
-import Home from "./app/screens/home/home";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./app/navigations/tab-navigations";
 
@@ -30,8 +29,10 @@ export default function App() {
         tokenCache={tokenCache}
         publishableKey={config.extra.clerkPublishableKey}
       >
-        <TabNavigation />
-        <View className="bg-green-100">
+        <SignedIn>
+          <TabNavigation />
+        </SignedIn>
+        <View>
           <SignedOut>
             <Login />
           </SignedOut>
