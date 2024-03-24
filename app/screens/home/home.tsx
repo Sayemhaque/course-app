@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { Text, Image, SafeAreaView, View } from "react-native";
 import React from "react";
 import { SignOut } from "../signout";
 
@@ -8,7 +8,7 @@ export default function Home() {
       <Image
         source={require("./../../../assets/7618742.jpg")}
         alt="sate"
-        className="w-full h-[300px] object-cover"
+        className="w-7 h-7 object-cover"
         style={{ objectFit: "contain" }}
       />
       <Text className="text-5xl font-bold px-4 text-center">

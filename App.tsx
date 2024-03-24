@@ -4,6 +4,8 @@ import { config } from "./app.config";
 import * as SecureStore from "expo-secure-store";
 import Login from "./app/screens/login";
 import Home from "./app/screens/home/home";
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigation from "./app/navigations/tab-navigations";
 
 export default function App() {
   const tokenCache = {
@@ -23,21 +25,18 @@ export default function App() {
     },
   };
   return (
-    <ClerkProvider
-      tokenCache={tokenCache}
-      publishableKey={config.extra.clerkPublishableKey}
-    >
-      <View>
-        {/* Sign In Component */}
-        <SignedIn>
-          <Home />
-        </SignedIn>
-
-        {/* Sign Out */}
-        <SignedOut>
-          <Login />
-        </SignedOut>
-      </View>
-    </ClerkProvider>
+    <NavigationContainer>
+      <ClerkProvider
+        tokenCache={tokenCache}
+        publishableKey={config.extra.clerkPublishableKey}
+      >
+        <TabNavigation />
+        <View className="bg-green-100">
+          <SignedOut>
+            <Login />
+          </SignedOut>
+        </View>
+      </ClerkProvider>
+    </NavigationContainer>
   );
 }
