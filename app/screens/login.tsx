@@ -1,20 +1,13 @@
-import {
-  View,
-  Text,
-  Touchable,
-  TouchableOpacity,
-  Image,
-  Button,
-} from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useOAuth } from "@clerk/clerk-expo";
 import { useWarmUpBrowser } from "../hooks/useWarmUpBrowser";
+import { useCallback } from "react";
 
 export default function Login() {
   useWarmUpBrowser();
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
-  const onPressSingIn = React.useCallback(async () => {
+  const onPressSingIn = useCallback(async () => {
     try {
       const { createdSessionId, setActive } = await startOAuthFlow();
 

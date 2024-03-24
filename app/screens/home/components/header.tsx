@@ -1,19 +1,18 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
 import { useUser } from "@clerk/clerk-expo";
 import { SignOut } from "./signout";
 
 export default function Header() {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isLoaded, isSignedIn } = useUser();
 
   if (!isLoaded || !isSignedIn) {
     return null;
   }
 
   return (
-    <View className="flex flex-row items-center justify-between border-b border-gray-200 py-2">
-      <View className="flex flex-row items-center gap-2">
-        <View>
+    <View className="bg-gray-200">
+      <View className="flex flex-row items-center justify-between border-b border-gray-200 py-2 mt-10 px-5">
+        <View className="flex flex-row items-center gap-2">
           <Image
             source={require("./../../../../assets/logo.webp")}
             alt="user image"
@@ -21,12 +20,8 @@ export default function Header() {
             style={{ objectFit: "contain" }}
           />
         </View>
-        {/* <View>
-          <Text>Welcome,</Text>
-          <Text className="font-semibold">{user.firstName}</Text>
-        </View> */}
+        <SignOut />
       </View>
-      <SignOut />
     </View>
   );
 }

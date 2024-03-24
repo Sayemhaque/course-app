@@ -1,10 +1,9 @@
 import { View, Text } from "react-native";
-import React from "react";
 
 export default function MyCourses() {
   return (
-    <View>
-      <Text>MyCourses</Text>
+    <View className="mt-10 px-5">
+      <Text className="text-2xl font-bold text-black">আমার কোর্সসমূহ</Text>
     </View>
   );
 }
