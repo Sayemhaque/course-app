@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, ScrollView } from "react-native";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import CourseCard from "./course-card";
@@ -20,14 +20,16 @@ export default function AllCourse() {
   }
 
   return (
-    <>
+    <View>
       <View className="mt-5 px-5">
         <Text className="text-2xl font-bold text-black">সকল কোর্সসমূহ</Text>
       </View>
       <FlatList
         data={data.data}
-        renderItem={({ item, index }) => <CourseCard course={item} />}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <CourseCard course={item} />}
       />
-    </>
+    </View>
   );
 }

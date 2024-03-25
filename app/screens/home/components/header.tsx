@@ -10,8 +10,8 @@ export default function Header() {
   }
 
   return (
-    <View className="bg-gray-200">
-      <View className="flex flex-row items-center justify-between border-b border-gray-200 py-2 mt-10 px-5">
+    <View className="bg-white py-6 rounded-b-[15px]">
+      <View className="flex flex-row items-center justify-between  mt-10 px-5">
         <View className="flex flex-row items-center gap-2">
           <Image
             source={require("./../../../../assets/logo.webp")}
