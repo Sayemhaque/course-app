@@ -5,6 +5,7 @@ import * as SecureStore from "expo-secure-store";
 import Login from "./app/screens/login";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./app/navigations/tab-navigations";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function App() {
   const tokenCache = {
@@ -23,21 +24,24 @@ export default function App() {
       }
     },
   };
+  const client = new QueryClient();
   return (
-    <NavigationContainer>
-      <ClerkProvider
-        tokenCache={tokenCache}
-        publishableKey={config.extra.clerkPublishableKey}
-      >
-        <SignedIn>
-          <TabNavigation />
-        </SignedIn>
-        <View>
-          <SignedOut>
-            <Login />
-          </SignedOut>
-        </View>
-      </ClerkProvider>
-    </NavigationContainer>
+    <QueryClientProvider client={client}>
+      <NavigationContainer>
+        <ClerkProvider
+          tokenCache={tokenCache}
+          publishableKey={config.extra.clerkPublishableKey}
+        >
+          <SignedIn>
+            <TabNavigation />
+          </SignedIn>
+          <View>
+            <SignedOut>
+              <Login />
+            </SignedOut>
+          </View>
+        </ClerkProvider>
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }

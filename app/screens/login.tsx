@@ -20,14 +20,14 @@ export default function Login() {
   }, []);
 
   return (
-    <View className="px-3">
+    <View className="px-3 mt-14">
       <Image
-        source={require("./../../assets/7618742.jpg")}
+        source={require("./../../assets/logo.webp")}
         alt="sate"
-        className="w-full max-h-[300px] object-cover"
+        className="w-full"
         style={{ objectFit: "contain" }}
       />
-      <View className="mt-14">
+      <View className="mt-32">
         <Text className="text-2xl font-bold text-[#0E776D]">
           তাজদিদ একাডেমিতে{" "}
           <Text className="text-5xl font-bold  text-black">স্বাগতম জানাই</Text>
@@ -39,9 +39,10 @@ export default function Login() {
           জীবন হোক সুন্দর।
         </Text>
       </View>
-      <TouchableOpacity onPress={onPressSingIn} className="mt-[100px]">
+      <TouchableOpacity onPress={onPressSingIn} className="mt-[140px]">
         <View>
-          <Text className="text-white text-center font-bold text-xl bg-[#0C9587] py-4 rounded-lg">
+          <Text
+           className="text-white text-center font-bold text-xl bg-[#0C9587] py-3 rounded-lg">
             লগ ইন করুন
           </Text>
         </View>

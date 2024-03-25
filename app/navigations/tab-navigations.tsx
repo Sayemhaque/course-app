@@ -22,7 +22,7 @@ export default function TabNavigation() {
         name="সকল কোর্সসমূহ"
         component={Home}
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <Ionicons name="book-outline" size={24} color={color} />
           ),
           tabBarLabel: ({ color }) => (
@@ -34,7 +34,7 @@ export default function TabNavigation() {
         name="আমার কোর্সসমূহ"
         component={MyCourses}
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialIcons name="playlist-add-check" size={35} color={color} />
           ),
           tabBarLabel: ({ color }) => (
@@ -46,7 +46,7 @@ export default function TabNavigation() {
         name="প্রোফাইল"
         component={Profile}
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <FontAwesome5 name="user" size={24} color={color} />
           ),
           tabBarLabel: ({ color }) => (

@@ -1,6 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { View, Image } from "react-native";
 import { useUser } from "@clerk/clerk-expo";
-import { SignOut } from "./signout";
+import { Avatar } from "./avatar";
 
 export default function Header() {
   const { isLoaded, isSignedIn } = useUser();
@@ -20,7 +20,7 @@ export default function Header() {
             style={{ objectFit: "contain" }}
           />
         </View>
-        <SignOut />
+        <Avatar />
       </View>
     </View>
   );
