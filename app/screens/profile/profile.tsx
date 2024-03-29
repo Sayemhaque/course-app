@@ -24,7 +24,7 @@ export default function Profile() {
       <TouchableOpacity onPress={() => signOut()} className="mt-[140px]">
         <View>
           <Text className="text-white text-center font-bold text-sm bg-[#0C9587] py-2 rounded-lg px-3">
-            লগ আউট
+            লগ আউট korun joldo
           </Text>
         </View>
       </TouchableOpacity>
